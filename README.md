@@ -325,7 +325,8 @@ The `else if` statement is very similar to the `else` statement. However, it let
 ```javascript
   var x = 5,;
 
-  // In this example the code in the else will be executed as none of the conditions are met
+  /* In this example the code in the else will be executed as none of
+    the conditions are met */
   if (x == 3) {
     // The code in here will not be executed
   } else if (x == 2) {
@@ -342,7 +343,8 @@ There will be times in which you may want to check for several conditions for th
 For this cases you can use the `switch` statement. `switch` will check a variable and compare it with as many `case`s as you need until the condition is met. Each one of this cases is delimited by a `break`. Aditionally, if no condition is met, a `default` can be specified. This `default` is optional and doesn't need to be part of the `switch`.
 
 ```javascript
-  // The code in this switch will be executed based on the value of the variable fruit
+  /* The code in this switch will be executed based
+     on the value of the variable fruit *.
   switch(fruit) {
     case 'apple':
       // Code here will execute if fruit == 'apple'
