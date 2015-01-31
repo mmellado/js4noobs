@@ -344,7 +344,7 @@ For this cases you can use the `switch` statement. `switch` will check a variabl
 
 ```javascript
   /* The code in this switch will be executed based
-     on the value of the variable fruit *.
+     on the value of the variable fruit. */
   switch(fruit) {
     case 'apple':
       // Code here will execute if fruit == 'apple'
