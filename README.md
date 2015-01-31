@@ -16,7 +16,8 @@ This tutorial will cover the following topics:
 Understanding these topics will help you understand how javascript works and allow you implement it's fetures to enhance the functionality of your websites
 
 
-## Comments  [skip](#variables--data-types)
+## Comments
+[skip](#variables--data-types)
 
 Comments are the most basic element in javascript. Comments have no effect at all on our code. However as a developer they are very helpful to help us understand what our code does.
 
