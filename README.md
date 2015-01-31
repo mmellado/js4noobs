@@ -1,14 +1,14 @@
 # Javascript for Noobs
 
-Javascript is a programming language that helps us execute our code through the browser. This means that it can be used power any HTML page or handle any events between the user and the website. This tutorial will only cover the basics, but it will let you write production ready javascript for any website.
+Javascript is a programming language that helps us execute our code through the browser. This means that it can be used power any HTML page or handle any events between the user and the website. This guide will only cover the basics, but it will let you write production ready javascript for any website.
 
-This tutorial will cover the following topics:
+This guide will cover the following topics:
 
 - [Comments](#comments)
 - [Variables & Data types](#variables--data-types)
-- [Statements](#statements)
+- [Expressions & Statements](#expressions--statements)
 - [Functions](#functions)
-- [JS APIs](#js-apis)
+- [DOM Manipulation](#dom-manipulation)
 - [jQuery](#jquery)
 - [Events](#events)
 - [Ajax](#ajax)
@@ -86,7 +86,7 @@ The example above is creating a variable storing a number. Numbers in variables 
   var z = y / 2; // z = 2
   var i = (z + 10) / 2; // i = 6
 ```
-Javascript and other programming languages also have a special opertor called 'mod'. This operator would give us the remainder of a division between two numbers. the 'mod' operator is respresented by a %.
+Javascript and other programming languages also have a special opertor called 'mod'. This operator would give us the remainder of a division between two numbers. the 'mod' operator is respresented by a `%`.
 
 
 ```javascript
@@ -226,7 +226,134 @@ Having our objects properly idented helps us understand where an object in the a
 
 The last data type we are going to talk about is the `null` value. For a variable to contain a `null` value means that it's not storing any data or that it's empty. This is the value we assign to a variable when we want to remove its content.
 
-## Statements
+## Expressions & Statements
 
-We now understand how we can store
+Variables help us store data. But the fun starts when we use this data to check whats happening in our page and do something about it. To do these kinds of checks we use a combination of expressions and statements.
 
+Expressions are pieces of code that produce a value and can be written wherever a value is expected. An example of an expression would be the value of a variable.
+
+```javascript
+  var myExpression = 2 + 2; // 2 + 2 is an expression
+  myExpression; // This is also an expression
+```
+
+Statements are pieces of code that perform an action. In this guide we will focus on two kinds of statements: Conditions and Loops
+
+### Conditions
+
+A conditional statement can help us decide what code to execute based on the result of a condition. There are four kinds of conditional statements.
+
+- if
+- else
+- else if
+- switch
+
+#### if
+
+The `if` statement is the most commonly used conditional statement. It lets us check for a condition to be met before letting a piece of code execute. This condition is specified through an expression.
+
+The most common types of expressions used for conditions use [comparisson operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators) to check if a they are met. When the `if` statement is executed, the expression is evaluated returning a boolean value. This value will decide if the code is executed or not.
+
+```javascript
+  var x = 5;
+
+  if (x == 5) {
+    // The code in here will be executed
+  }
+
+  if (x == 3) {
+    // The code here will not be executed
+  }
+```
+
+Apart from checking for an expression using a comparisson operator, an if statement can also just check for a variable. If this variable has any value different from `0`, `null`, `undefined` or `false`, the condition will return true;
+
+```javascript
+  var x = 5;
+  var y = 0;
+
+  if (x) {
+    // The code in here will be executed
+  }
+
+  if (y) {
+    // The code here will not be executed
+  }
+```
+
+#### else
+
+The `else` statement goes hand to hand with the `if` statement. It enhances its power by letting us execute one piece of code if the condition is met and a different piece of code if it is not met.
+
+```javascript
+  var x = 5;
+
+  // In this example only the code in the else will be executed
+  if (x == 3) {
+    // The code in here will not be executed
+  } else {
+    // The code here will be executed
+  }
+```
+
+When using an `else` statement the code inside it will not be executed if the condition is met.
+
+#### else if
+
+The `else if` statement is very similar to the `else` statement. However, it let's us specify a second (or third, or nth) condition to be checked.
+
+```javascript
+  var x = 5;
+
+  // In this example the code in the else if will be executed
+  if (x == 3) {
+    // The code in here will not be executed
+  } else if (x == 5) {
+    // The code here will be executed
+  }
+
+  // In this example no code will be executed as none of the conditions are met
+  if (x == 3) {
+    // The code in here will not be executed
+  } else if (x == 2) {
+    // The code here won't be executed either
+  }
+```
+
+`else if` can also be followed by an `else`. This way the conditions in the `if` and the `else if` are not met the decission will be defaulted to the `else`.
+
+```javascript
+  var x = 5,;
+
+  // In this example the code in the else will be executed as none of the conditions are met
+  if (x == 3) {
+    // The code in here will not be executed
+  } else if (x == 2) {
+    // The code here won't be executed either
+  } else {
+    // The code here will be executed
+  }
+```
+
+#### switch
+
+There will be times in which you may want to check for several conditions for the same expression. In this cases you could use a lot of ifs and else ifs. However this would make your code really confusing and hard to read.
+
+For this cases you can use the `switch` statement. `switch` will check a variable and compare it with as many `case`s as you need until the condition is met. Each one of this cases is delimited by a `break`. Aditionally, if no condition is met, a `default` can be specified. This `default` is optional and doesn't need to be part of the `switch`.
+
+```javascript
+  // The code in this switch will be executed based on the value of the variable fruit
+  switch(fruit) {
+    case 'apple':
+      // Code here will execute if fruit == 'apple'
+    break;
+
+    case 'orange':
+      // Code here will be executed if fruit == 'orange'
+    break;
+
+    default:
+      // The code here will be executed if fruit is different to all the cases above.
+    break;
+  }
+```
