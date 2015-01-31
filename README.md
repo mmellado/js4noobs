@@ -12,6 +12,7 @@ This guide will cover the following topics:
 - [jQuery](#jquery)
 - [Events](#events)
 - [Ajax](#ajax)
+- [Resources](#resources)
 
 Understanding these topics will help you understand how javascript works and allow you implement it's fetures to enhance the functionality of your websites
 
@@ -51,6 +52,7 @@ Block comments are really useful and are commonly use to write [code documentati
 Having good comments in your code may be something boring and time consuming. However it is extremely important, as it can help other people (and other developers) easily understand your code. Keep in mind that the fact that you wrote the code doesn't mean that you'll be the only person maintaining it.
 
 ## Variables & Data Types
+[skip](#functions)
 
 Variables can be thought of as container that let us store data on them. These will help us while writing code by letting us save and re-use any data to accomplish your goal.
 
@@ -359,3 +361,74 @@ For this cases you can use the `switch` statement. `switch` will check a variabl
     break;
   }
 ```
+
+### Loops
+
+Loops help us iterate over a set of data or execute a function based on different values for a set number of times. An example use for Loops is when you want to do something to every element in an array. However, they can also help us iterate over elements in your HTML page. We will go over this in the [DOM Manipulation](#dom-manipulation) section.
+
+We are going to focus on two different kinds of looping statements:
+
+- while
+- for
+
+There are a couple more looping statements. However for the purposes of this guide we will only reference to them in the [Resources](#resources) section.
+
+#### while
+
+the `while` statement takes an expression to check the duration of the loop. This is very similar to what we do with the `if` statement. In the case of the `while`, the loop will continue until this expression return a true value. This means that the code inside thw `while` needs to modify the values in the expression for the condition to ve met eventually.
+
+```javascript
+  var i = 0;
+  var j = 5;
+
+  /**
+   * In this example the code inside the loop will be executed
+   * until the value of i is the same as the value of j.
+   */
+  while (i != j) {
+    // Do something here
+
+    // Make sure to modify your variables for the condition to be met
+    i++; // i++ is another way of saying i = i + 1;
+  }
+```
+
+It is extremely important to make sure that the values in the expression are somehow modified inside the condition. Otherwise, this will cause an infinite loop in your code causing your browser to crash.
+
+
+```javascript
+  var i = 0;
+  var j = 5;
+
+  while (i != j) {
+    /**
+     * Since the values of i and j are never modified inside this
+     * statement, the code here will run infinitely causing your
+     * browser to crash.
+     */
+  }
+```
+#### for
+
+The for loop is very similar to the while. It takes three expressions separated by a semicolon (`;`). This first expression is the variable to track the progress of the loop. This variable needs ot be initialized here. As a second expression, we have the condition for the loop to keep going. Finally we have a third expression that modifies the value of the variable in the first expression trying to get the loop to an end.
+
+This has both advantages and disadvantages. For one, it lets you keep a better track of your index variable and prevent an infinite loop from happening. However it doesn't allow as much flexibility in the way we modify the index for the loop to end.
+
+```javascript
+  var colors = ['red', 'blue', 'pink', 'black'];
+
+  /**
+   * In this example we start with an index of 0 assigned to the variable i.
+   * Then we specify that the loop should continue while the value of i is less
+   * than the lenght of the lenght of the colors array.
+   * Finally we specify that the value of i should be incremented after every iteration.
+   */
+  for (var i = 0; i < colors.length; i++) {
+    /* At this point we can use the index variable to access the array
+       This will show an alert window for every item in the colors array */
+    alert(colors[i]);
+  }
+```
+
+## Functions
+
