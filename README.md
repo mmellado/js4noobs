@@ -252,7 +252,7 @@ A conditional statement can help us decide what code to execute based on the res
 
 The `if` statement is the most commonly used conditional statement. It lets us check for a condition to be met before letting a piece of code execute. This condition is specified through an expression.
 
-The most common types of expressions used for conditions use [comparisson operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators){:target="_blank"} to check if a they are met. When the `if` statement is executed, the expression is evaluated returning a boolean value. This value will decide if the code is executed or not.
+The most common types of expressions used for conditions use [comparisson operators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Comparison_operators) to check if a they are met. When the `if` statement is executed, the expression is evaluated returning a boolean value. This value will decide if the code is executed or not.
 
 ```javascript
   var x = 5;
