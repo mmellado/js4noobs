@@ -4,19 +4,19 @@ Javascript is a programming language that helps us execute our code through the 
 
 This tutorial will cover the following topics:
 
-- Comments
-- Variables & Data types
-- Statements
-- Functions
-- JS APIs
-- jQuery
-- Events
-- Ajax
+- [Comments](#comments)
+- [Variables & Data types](#variables--data-types)
+- [Statements](#statements)
+- [Functions](#functions)
+- [JS APIs](#js-apis)
+- [jQuery](#jquery)
+- [Events](#events)
+- [Ajax](#ajax)
 
 Understanding these topics will help you understand how javascript works and allow you implement it's fetures to enhance the functionality of your websites
 
 
-## Comments
+## Comments  [skip](#variables--data-types)
 
 Comments are the most basic element in javascript. Comments have no effect at all on our code. However as a developer they are very helpful to help us understand what our code does.
 
@@ -226,4 +226,6 @@ Having our objects properly idented helps us understand where an object in the a
 The last data type we are going to talk about is the `null` value. For a variable to contain a `null` value means that it's not storing any data or that it's empty. This is the value we assign to a variable when we want to remove its content.
 
 ## Statements
+
+We now understand how we can store
 
