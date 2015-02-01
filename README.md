@@ -421,7 +421,8 @@ This has both advantages and disadvantages. For one, it lets you keep a better t
    * In this example we start with an index of 0 assigned to the variable i.
    * Then we specify that the loop should continue while the value of i is less
    * than the lenght of the lenght of the colors array.
-   * Finally we specify that the value of i should be incremented after every iteration.
+   * Finally we specify that the value of i should be incremented after
+   * every iteration.
    */
   for (var i = 0; i < colors.length; i++) {
     /* At this point we can use the index variable to access the array
@@ -429,6 +430,8 @@ This has both advantages and disadvantages. For one, it lets you keep a better t
     alert(colors[i]);
   }
 ```
+To learn more about looping statements check the [MDN documentation on iterations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements#Iterations).
 
 ## Functions
+
 
