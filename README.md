@@ -434,4 +434,73 @@ To learn more about looping statements check the [MDN documentation on iteration
 
 ## Functions
 
+Function are blocks of code that can be executed over and over again. They are very helpful for many situtions.
 
+Every function needs to have a name.
+
+```javascript
+  function myFunction() {
+
+  }
+```
+In this case we are creating a function called myFunction. At the moment our functoin does nothing. However we can add expressions and statements in our function for it to execute code.
+
+```javascript
+  function myFunction() {
+    var colors = ['red', 'blue', 'pink', 'black'],
+        length = colors.length,
+        i;
+
+    for (i = 0; i < length; i++) {
+      alert(colors[i]);
+    }
+  }
+```
+In this example we are combining several things we have learned so far. We have an array of colors. Then we get the length of the array and store it on another variable. Finally we have a variable `i` thas has no initial value. Declaring all your variables at the beginning of your function is a standard practice, even when they are not initialized with any value.
+
+After that we do a loop through the colors and show an alert with every color. However, with the code that we have so far, no code will actually be executed. This is just creating the function. After that, we need to call it for its code to be executed.
+
+```javascript
+  myFunction();
+```
+
+After executing this line, the code inside the function will be executed.
+
+Another characteristic of functions is that they can take parameters in to be manipulated. This could allow a function to do something different depending on the parameter we pass in.
+
+```javascript
+  function greeting(name) {
+    if (name === 'Derp') {
+      alert('Hi Derp! Welcome back!')
+    } else {
+      alert('You are not Derp so no welcome for you!');
+    }
+  }
+```
+In this example, we are passing a parameter called name to our function. Then inside our function we check for the value of name and do something different depending on it. To call this function properly we would call is passing a name as a parameter.
+
+```javascript
+  greeting('Derp');
+```
+Calling the function like we are doing above would result in seeing an alert saying 'Hi Derp welcome back!'. Based on our condition, passing anything else to the function would result on an alert saying 'You are not Derp so no welcome for you!'.
+
+A function can also take more than one parameter. To add a second parameter, we need to separate them with a comma in the function declaration.
+
+```javascript
+  function add(x, y) {
+    alert(x + y);
+  }
+```
+In this example we are creating a function that takes 2 arguments. Then shows an alert with the sum of both parameters. This is great, however, an adition function is kind of useless if all it does is alert the sum of two values. It would be easier if we could get the value and store it in a valuable. For this, we use the return statement. This lets us send back a value as a result of a function.
+
+```javascript
+  function add(x, y) {
+    return x + y;
+  }
+```
+
+With this we can simply call the function and assign it's value to a variable.
+
+```javascript
+  var i = add(3, 5); // i = 8
+```
