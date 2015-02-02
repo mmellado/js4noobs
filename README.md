@@ -122,6 +122,19 @@ Numbers can also be concatenated with strings
 ```
 In this example we are concatenating a string with a number and then with another string, forming the phrase `'I bought 5 apples'`
 
+Every time you concatenate a number to a string it will turn into a string, even if this string is an empty string.
+
+```javascript
+  /**
+   * This code will result in '5', which means if you try to add it with
+   * another number it will result in string concatenation and not
+   * number addition.
+   */
+  var ammount = 5 + ''; // ammount = '5'
+  var newAmmoutn = ammount + 2; // newAmmount = '52'
+
+```
+
 ### Booleans
 
 A boolean variable can contain only two values: `true` or `false`. A boolean variable can help define conditions in your code. We will go more into deep on this once we reach the section about Statements.
