@@ -446,6 +446,7 @@ This has both advantages and disadvantages. For one, it lets you keep a better t
 To learn more about looping statements check the [MDN documentation on iterations](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements#Iterations).
 
 ## Functions
+[skip](#dom-manipulation)
 
 Function are blocks of code that can be executed over and over again. They are very helpful for many situtions.
 
@@ -490,7 +491,7 @@ Another characteristic of functions is that they can take parameters in to be ma
     }
   }
 ```
-In this example, we are passing a parameter called name to our function. Then inside our function we check for the value of name and do something different depending on it. To call this function properly we would call is passing a name as a parameter.
+In this example, we are passing a parameter called name to our function. Then inside our function we check for the value of name and do something different depending on it. To call this function properly we would call passing a name as a parameter.
 
 ```javascript
   greeting('Derp');
@@ -504,7 +505,7 @@ A function can also take more than one parameter. To add a second parameter, we 
     alert(x + y);
   }
 ```
-In this example we are creating a function that takes 2 arguments. Then shows an alert with the sum of both parameters. This is great, however, an adition function is kind of useless if all it does is alert the sum of two values. It would be easier if we could get the value and store it in a valuable. For this, we use the return statement. This lets us send back a value as a result of a function.
+In this example we are creating a function that takes 2 arguments. Then shows an alert with the sum of both parameters. This is great, however, an adition function is kind of useless if all it does is alert the sum of two values. It would be easier if we could get the value and store it in a variable. For this, we use the return statement. This lets us send back a value as a result of a function.
 
 ```javascript
   function add(x, y) {
@@ -512,8 +513,58 @@ In this example we are creating a function that takes 2 arguments. Then shows an
   }
 ```
 
-With this we can simply call the function and assign it's value to a variable.
+With this we can simply call the function and store its value in a variable.
 
 ```javascript
   var i = add(3, 5); // i = 8
 ```
+
+## DOM Manipulation
+[Skip](#jquery)
+
+We now understand the programatic side of javascript which helps us manipulate data. However this is a little useless if you can't reflect this manipulation onf your HTML page.
+
+Fortunately, Javascript includes a set of functions (aka an [API](http://en.wikipedia.org/wiki/Application_programming_interface)) which allow us to interact with our web elements.
+
+HTML elements have different properties. These include, but are not limitted to, a class, an ID, data attributes, a background color, text, size etc. With javascript you can modify any of this properties. All you need to do is to find your HTML element and assign it to a variable.
+
+Let's start by understanding how to select an element from your HTML.
+
+```javascript
+  var myButton = document.querySelector('#myButton');
+```
+The example above we are calling the function `document.querySelector`. This function takes a [CSS selector](https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector) as a paremeter and will check the entire HTML document for the first element matching this selector. In this case we look for the first button with the id myButton. Once it finds it, it will reutnr the element so we can store it in a variable making it possible to modify any of its properties.
+
+```javascript
+  var myButton = document.querySelector('#myButton');
+
+  myButton.innerHTML = 'Herp Derp!';
+```
+The example above will find the button and change its text to 'Herp Derp!'.
+
+Sometimes you may want to select several HTML elements and do the same thing to them. For example, you may have a website with a bunch of blockquotes, and modify their display property to block. In this case, `document.querySelector('.blockquote')` would not work as it would only give us the first blockquote in the page.
+
+However, we javascript knows this is a common use case and provides a function to get all the elements that match our CSS selector.
+
+```javascript
+  var blockquotes = document.querySelectorAll('.blockquote');
+```
+This function will return an array with all the HTML elements matching our CSS selector. Then, we can go through all the elements and modify its display property.
+
+```javascript
+  var blockquotes = document.querySelectorAll('.blockquote'),
+      len = blockquotes.length,
+      i;
+
+  for (i = 0; i <  len; i++) {
+    blockqotes[i].style.display = 'inline';
+  }
+```
+We can modify pretty much any property of an element. To read more about elements properties and the kinds of things you can modify, read the [MDN Documentation on Web APIs](https://developer.mozilla.org/en-US/docs/Web/API).
+
+## jQuery
+
+The list above may be a little overwhelming, and the Javascript community knows it. That's why a lot of people gathered and build a library that wraps around Javascript helping us accomplish everything in a much simpler and verbose way.
+
+This library is called [jQuery](http://jquery.com/)
+
