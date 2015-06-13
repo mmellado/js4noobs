@@ -568,3 +568,183 @@ The list above may be a little overwhelming, and the Javascript community knows 
 
 This library is called [jQuery](http://jquery.com/)
 
+jQuery is described on their website as a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.
+
+In easier words, jQuery makes javascrip easier and faster to write javascript code while guaranteeing that it will work in all browsers.
+
+Now, understanding the basics of jQuery can be a little confusing, but once you understand how it works it becomes really straightforward. You can think of jQuery as an inception of functions. This is because we normally pass functions as parameters to other functions. These function parameters can also be called callback functions. We will go over some examples later on.
+
+Let's see how a basic jQuery block works.
+
+```javascript
+  $(document).ready();
+```
+
+Let's pay attention to the beginning of this call. The first thing we have is the `$()` function. This is jQuery's basic function. Everytime you want to do something with jQuery, you have to use the `$()` function. The parameter for this function is normally a CSS selector targeting an element in your HTML document. In this example, the jQuery function is taking `document` as a parameter, a reserved word that automagically represents your entire HTML document. The result will be a jQuery object containing a DOM element (in this case our document), together with a sub set of functions that can be triggered over this DOM element.
+
+After our jQuery function we are doing `.ready()`. Having a `.` and a second function next to a function is called function chaining. Since the `ready()` function is part of all jQuery objects, this means that it will be executed over the DOM element the `$()` function is selecting and returning. In this particular example, it means that something will be executed when the document is fully loaded, or in jQuery terms, ready.
+
+Now, the `ready()` function would do nothing by itself, except for identify the fact that the document is ready. However, we can give it a callback function as a parameter for new things to be executed once the document is ready. Let's see a new example:
+
+```javascript
+  $(document).ready(function() {
+    alert('Hello world!');
+  });
+```
+
+In the example above, we are waiting for the document to be fully loaded. After that, we do an alert on the page with the text `Hello world`. You may be wondering, why do we want to wait for the document to be ready, if I can simply do an alert any minte. And you would be right with this example. However, let's imagine we want to modify the text in our button like we did on the [previous section](#dom-manipulation). If the DOM hasn't finished loading, we would not be able to find the element to modify. So in this case, it'd be best to wait for it to be ready before trying to modify it
+
+```javascript
+  $(document).ready(function() {
+    var myButton = document.querySelector('#myButton');
+
+    myButton.innerHTML = 'Herp Derp!';
+  });
+```
+
+Another important thing about function chaining is that the chained function has access to the selected element. This can be accessed through a special variable called `this`.
+
+```javascript
+  $(document).ready(function() {
+    console.log(this);  // This will log the document into the console.
+  });
+```
+
+### Manipulating the DOM with jQuery
+
+Remember when we said jQuery would make it a lot easier to write Javascript? In the previous example you saw how we used it to make sure our DOM is fully loaded before we could execute an action. However, we can also use it to execute the action itself.
+
+Let's go over the example again. After waiting for the document to be ready we are.
+
+```javascript
+  var myButton = document.querySelector('#myButton');
+```
+
+This could be very easily done using jQuery. Remember when we talked about the `$()` function? This is the one behind all the jQuery magic, as it let's us select any element in our DOM. The only thing we need, is to know the CSS selector for the element we want to work with. In this case, we will use it to select the button with the ID `#myButton`
+
+```javascript
+  var myButton = $('#myButton');
+```
+
+And as simple as that, we have stored the `#myButton` element into a variable. Once we have it, we can go ahead and modify using a jQuery chaining function.
+
+```javascript
+  var myButton = $('#myButton');
+  myButton.text('Herp Derp!');
+```
+
+We could make it even easier by avoiding the need of a variable, selecting the element and chaining the text change to the selector in one line.
+
+```javascript
+  $('#myButton').text('Herp Derp!');
+```
+
+And finally, triggering this inside our document ready to make sure this happens once the button is ready in the DOM.
+
+```javascript
+  $(document).ready(function() {
+    $('#myButton').text('Herp Derp!');
+  });
+```
+
+Most of the time, you'll want to do all your DOM manipulation purposes inside a callback function for `$(document).ready()`. This will guarantee that your whatever element you try to modify is existent.
+
+There is a wide variety of jQuery functions that you can use to manipulate. A few of them are listed below.
+
+- text()
+-- When passing a parameter, it modifies the text inside the selected element. This works for any HTML element that has text inside except for form elements (input, textarea). See the example above.
+-- When not passing a parameter, reads the text of the selected element;
+
+```html
+  <button id="myButton">This is a button</button>
+```
+```javascript
+  var buttonText = $('#myButton').text(); // The value would be 'This is a button'
+```
+
+- val()
+-- This is similar to text(), except it works for form elements (input, textarea, select, checkbox)
+
+```html
+  <input id="myField" value="Derp">
+```
+```javascript
+  var fieldText = $('#myField').val(); // The value would be 'Derp'
+  $('#myField').val('Herp'); // This would set the value of the field to 'Herp'
+```
+
+- html()
+-- When not using a parameter it will return the HTML inside the selected element.
+-- When passing a parameter it will inject it as HTML into the selected element.
+
+```html
+  <div class="foo">
+    <button>Click Me</button>
+  </div>
+```
+```javascript
+  var insideFoo = $('.foo').html(); // The value would be '<button>Click Me</button>'. This will come back in the form of HTML nodes.
+  $('.foo').html('<input id="myField" value="Derp">'); // This will replace the markup inside the div with an input field cointainin the value 'Derp'
+```
+
+- attr()
+-- When passing a single parameter, it will read the value of the element's attribute specified in this parameter.
+-- When passing 2 parameters, the first will indicate the attribute and the second the value to set for it.
+
+```html
+  <div class="foo" data-clicked="false">
+    <button>Click Me</button>
+  </div>
+```
+```javascript
+  var clickStatus = $('.foo').attr('data-clicked'); // The value would be 'false'
+  $('.foo').attr('data-clicked', "true"); // Will set the value of 'data-clicked' to 'true'
+```
+
+For a full list of jQuery functions, you can check the [jQuery API](https://api.jquery.com/)
+
+## Events
+[skip](#ajax)
+
+So far, we've been able to modify things in our DOM using javascirpt. However we have been doing it on the fly when the document loads. The really cool thing about javascript is that it lets us do things when we interact with out website.
+
+To do this, javascript has something called an event system. This allows us to tell our program to wait for an action to happen and trigger something as a reaction it. We have already used one of these events (we used `ready()` in the [previous section](#jquery)). However, there is a wide variety of events javascript can listten to. Some of the most used are:
+
+- click: A pointing device button has been pressed and released on an element.
+- mouseover: A pointing device is moved onto the element that has the listener attached or onto one of its children.
+- keydown: A key is pressed down.
+- focus: An element has received focus.
+- blur: An element has lost focus.
+
+For a full list of events, please refer to the [MDN Reference file](https://developer.mozilla.org/en-US/docs/Web/Events)
+
+Let's see an example using a click event. In our example we will trigger an alert after clicking on a button. The first thing to do is select the element to be clicked. This way we can add the event listtener to it for the alert to be triggered on click.
+
+```javascript
+  $('#myButton');
+```
+The next thing is to add the listtener to our element. We do this by chaining the `.on()` function. This function takes several parameters. In this example we will use only two. The first parameter is the event we want to listten to, followed by the callback function to be executed when this event is triggered.
+
+```javascript
+  $('#myButton').on('click', function(){});
+```
+Right now, our callback function is empty, but in this function we can specify whatever we want to happen after clicking on the button.
+
+```javascript
+  $('#myButton').on('click', function(){
+    alert('The button has been clicked');
+  });
+```
+
+With this we are now telling our program that whenever we click on the button with id `myButton` we want to trigger a function that creates an alert with the text `'The button has been clicked'`. The callback function can execute as many things as desired. This means we can use it to modify the DOM, create animations on our page, inject new HTML into the page, etcetera.
+
+```javascript
+  $('#myButton').on('click', function(){
+    $(this).text('Click me again!') // Change the text of the button clicked using the 'this' variable
+    $('body').append('<button>New button</button>'); // Append a new button with the text 'New button' to the end of the document's body
+  });
+```
+
+## Ajax
+[skip](#resources)
+
