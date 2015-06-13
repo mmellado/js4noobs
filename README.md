@@ -745,6 +745,8 @@ With this we are now telling our program that whenever we click on the button wi
   });
 ```
 
+These are just the basics of events in javascript using jQuery. There are some more ways of working with events including event delegation and propagation. For more information on javascript events please refer to the articles listed in the [resources section](#resources).
+
 ## Ajax
 [skip](#resources)
 
