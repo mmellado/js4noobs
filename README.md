@@ -47,7 +47,7 @@ Block comments can help us write several lines of comments without having to add
      to open comments in every line. */
 ```
 
-Block comments are really useful and are commonly use to write [code documentation](http://usejsdoc.org/ "JSDoc"), or prevent a piece of code from executing while trying to debug your script.
+Block comments are really useful and are commonly used to write [code documentation](http://usejsdoc.org/ "JSDoc"), or prevent a piece of code from executing while trying to debug your script.
 
 Having good comments in your code may be something boring and time consuming. However it is extremely important, as it can help other people (and other developers) easily understand your code. Keep in mind that the fact that you wrote the code doesn't mean that you'll be the only person maintaining it.
 
@@ -84,11 +84,11 @@ The example above is creating a variable storing a number. Numbers in variables 
   var biz = foo + bar; // biz = 4
 
   var x = biz - 3; // x = 1
-  var y = bar * 2; // y = 4
+  var y = bar * 2; // y = 6
   var z = y / 2; // z = 2
   var i = (z + 10) / 2; // i = 6
 ```
-Javascript and other programming languages also have a special opertor called 'mod'. This operator would give us the remainder of a division between two numbers. the 'mod' operator is respresented by a `%`.
+Javascript and other programming languages also have a special operator called 'mod'. This operator would give us the remainder of a division between two numbers. the 'mod' operator is respresented by a `%`.
 
 
 ```javascript
@@ -117,8 +117,8 @@ If you notice the content of the variables `opening` and `fruit` are wrapped in 
 Numbers can also be concatenated with strings
 
 ```javascript
-  var ammount = 5;
-  var phrase = 'I bought ' +  ammount + ' apples';
+  var amount = 5;
+  var phrase = 'I bought ' +  amount + ' apples';
 ```
 In this example we are concatenating a string with a number and then with another string, forming the phrase `'I bought 5 apples'`
 
@@ -130,8 +130,8 @@ Every time you concatenate a number to a string it will turn into a string, even
    * another number it will result in string concatenation and not
    * number addition.
    */
-  var ammount = 5 + ''; // ammount = '5'
-  var newAmmoutn = ammount + 2; // newAmmount = '52'
+  var amount = 5 + ''; // amount = '5'
+  var newAmmutn = amount + 2; // newAmount = '52'
 
 ```
 
@@ -177,7 +177,7 @@ When you create an array, you will normally know the size of the array. However,
   var colors = ['red', 'blue', 'pink', 'black'];
   var arraySize = colors.length; // araySize = 4
 ```
-The `length` property will provide the literal size of the array. However, keep in mind that the index of arrays starts in 0, so you need to be careful when you use access the array using it's lenght as its last index will be its length - 1
+The `length` property will provide the literal size of the array. However, keep in mind that the index of arrays starts in 0, so you need to be careful when you use access the array using it's length as its last index will be its length - 1
 
 ```javascript
   var colors = ['red', 'blue', 'pink', 'black'];
@@ -243,7 +243,7 @@ The last data type we are going to talk about is the `null` value. For a variabl
 
 ## Expressions & Statements
 
-Variables help us store data. But the fun starts when we use this data to check whats happening in our page and do something about it. To do these kinds of checks we use a combination of expressions and statements.
+Variables help us store data. But the fun starts when we use this data to check what's happening in our page and do something about it. To do these kinds of checks we use a combination of expressions and statements.
 
 Expressions are pieces of code that produce a value and can be written wherever a value is expected. An example of an expression would be the value of a variable.
 
@@ -335,7 +335,7 @@ The `else if` statement is very similar to the `else` statement. However, it let
   }
 ```
 
-`else if` can also be followed by an `else`. This way the conditions in the `if` and the `else if` are not met the decission will be defaulted to the `else`.
+`else if` can also be followed by an `else`. This way the conditions in the `if` and the `else if` are not met the decision will be defaulted to the `else`.
 
 ```javascript
   var x = 5,;
@@ -388,7 +388,7 @@ There are a couple more looping statements. However for the purposes of this gui
 
 #### while
 
-the `while` statement takes an expression to check the duration of the loop. This is very similar to what we do with the `if` statement. In the case of the `while`, the loop will continue until this expression return a true value. This means that the code inside thw `while` needs to modify the values in the expression for the condition to ve met eventually.
+the `while` statement takes an expression to check the duration of the loop. This is very similar to what we do with the `if` statement. In the case of the `while`, the loop will continue until this expression return a true value. This means that the code inside the `while` needs to modify the values in the expression for the condition to be met eventually.
 
 ```javascript
   var i = 0;
@@ -423,7 +423,7 @@ It is extremely important to make sure that the values in the expression are som
 ```
 #### for
 
-The for loop is very similar to the while. It takes three expressions separated by a semicolon (`;`). This first expression is the variable to track the progress of the loop. This variable needs ot be initialized here. As a second expression, we have the condition for the loop to keep going. Finally we have a third expression that modifies the value of the variable in the first expression trying to get the loop to an end.
+The for loop is very similar to the while. It takes three expressions separated by a semicolon (`;`). This first expression is the variable to track the progress of the loop. This variable needs to be initialized here. As a second expression, we have the condition for the loop to keep going. Finally we have a third expression that modifies the value of the variable in the first expression trying to get the loop to an end.
 
 This has both advantages and disadvantages. For one, it lets you keep a better track of your index variable and prevent an infinite loop from happening. However it doesn't allow as much flexibility in the way we modify the index for the loop to end.
 
@@ -433,7 +433,7 @@ This has both advantages and disadvantages. For one, it lets you keep a better t
   /**
    * In this example we start with an index of 0 assigned to the variable i.
    * Then we specify that the loop should continue while the value of i is less
-   * than the lenght of the lenght of the colors array.
+   * than the length of the length of the colors array.
    * Finally we specify that the value of i should be incremented after
    * every iteration.
    */
@@ -457,7 +457,7 @@ Every function needs to have a name.
 
   }
 ```
-In this case we are creating a function called myFunction. At the moment our functoin does nothing. However we can add expressions and statements in our function for it to execute code.
+In this case we are creating a function called myFunction. At the moment our function does nothing. However we can add expressions and statements in our function for it to execute code.
 
 ```javascript
   function myFunction() {
@@ -470,7 +470,7 @@ In this case we are creating a function called myFunction. At the moment our fun
     }
   }
 ```
-In this example we are combining several things we have learned so far. We have an array of colors. Then we get the length of the array and store it on another variable. Finally we have a variable `i` thas has no initial value. Declaring all your variables at the beginning of your function is a standard practice, even when they are not initialized with any value.
+In this example we are combining several things we have learned so far. We have an array of colors. Then we get the length of the array and store it on another variable. Finally we have a variable `i` that has no initial value. Declaring all your variables at the beginning of your function is a standard practice, even when they are not initialized with any value.
 
 After that we do a loop through the colors and show an alert with every color. However, with the code that we have so far, no code will actually be executed. This is just creating the function. After that, we need to call it for its code to be executed.
 
@@ -505,7 +505,7 @@ A function can also take more than one parameter. To add a second parameter, we 
     alert(x + y);
   }
 ```
-In this example we are creating a function that takes 2 arguments. Then shows an alert with the sum of both parameters. This is great, however, an adition function is kind of useless if all it does is alert the sum of two values. It would be easier if we could get the value and store it in a variable. For this, we use the return statement. This lets us send back a value as a result of a function.
+In this example we are creating a function that takes 2 arguments. Then shows an alert with the sum of both parameters. This is great, however, an addition function is kind of useless if all it does is alert the sum of two values. It would be easier if we could get the value and store it in a variable. For this, we use the return statement. This lets us send back a value as a result of a function.
 
 ```javascript
   function add(x, y) {
@@ -522,18 +522,18 @@ With this we can simply call the function and store its value in a variable.
 ## DOM Manipulation
 [Skip](#jquery)
 
-We now understand the programatic side of javascript which helps us manipulate data. However this is a little useless if you can't reflect this manipulation onf your HTML page.
+We now understand the programatic side of javascript which helps us manipulate data. However this is a little useless if you can't reflect this manipulation on your HTML page.
 
 Fortunately, Javascript includes a set of functions (aka an [API](http://en.wikipedia.org/wiki/Application_programming_interface)) which allow us to interact with our web elements.
 
-HTML elements have different properties. These include, but are not limitted to, a class, an ID, data attributes, a background color, text, size etc. With javascript you can modify any of this properties. All you need to do is to find your HTML element and assign it to a variable.
+HTML elements have different properties. These include, but are not limitted to, a class, an ID, data attributes, a background color, text, size, etc. With javascript you can modify any of this properties. All you need to do is to find your HTML element and assign it to a variable.
 
 Let's start by understanding how to select an element from your HTML.
 
 ```javascript
   var myButton = document.querySelector('#myButton');
 ```
-The example above we are calling the function `document.querySelector`. This function takes a [CSS selector](https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector) as a paremeter and will check the entire HTML document for the first element matching this selector. In this case we look for the first button with the id myButton. Once it finds it, it will reutnr the element so we can store it in a variable making it possible to modify any of its properties.
+The example above we are calling the function `document.querySelector`. This function takes a [CSS selector](https://developer.mozilla.org/en-US/docs/Glossary/CSS_Selector) as a paremeter and will check the entire HTML document for the first element matching this selector. In this case we look for the first button with the id myButton. Once it finds it, it will return the element so we can store it in a variable making it possible to modify any of its properties.
 
 ```javascript
   var myButton = document.querySelector('#myButton');
@@ -544,7 +544,7 @@ The example above will find the button and change its text to 'Herp Derp!'.
 
 Sometimes you may want to select several HTML elements and do the same thing to them. For example, you may have a website with a bunch of blockquotes, and modify their display property to block. In this case, `document.querySelector('.blockquote')` would not work as it would only give us the first blockquote in the page.
 
-However, we javascript knows this is a common use case and provides a function to get all the elements that match our CSS selector.
+However, javascript knows this is a common use case and provides a function to get all the elements that match our CSS selector.
 
 ```javascript
   var blockquotes = document.querySelectorAll('.blockquote');
@@ -570,7 +570,7 @@ This library is called [jQuery](http://jquery.com/)
 
 jQuery is described on their website as a fast, small, and feature-rich JavaScript library. It makes things like HTML document traversal and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.
 
-In easier words, jQuery makes javascrip easier and faster to write javascript code while guaranteeing that it will work in all browsers.
+In easier words, jQuery makes javascript easier and faster to write javascript code while guaranteeing that it will work in all browsers.
 
 Now, understanding the basics of jQuery can be a little confusing, but once you understand how it works it becomes really straightforward. You can think of jQuery as an inception of functions. This is because we normally pass functions as parameters to other functions. These function parameters can also be called callback functions. We will go over some examples later on.
 
@@ -592,7 +592,7 @@ Now, the `ready()` function would do nothing by itself, except for identify the 
   });
 ```
 
-In the example above, we are waiting for the document to be fully loaded. After that, we do an alert on the page with the text `Hello world`. You may be wondering, why do we want to wait for the document to be ready, if I can simply do an alert any minte. And you would be right with this example. However, let's imagine we want to modify the text in our button like we did on the [previous section](#dom-manipulation). If the DOM hasn't finished loading, we would not be able to find the element to modify. So in this case, it'd be best to wait for it to be ready before trying to modify it
+In the example above, we are waiting for the document to be fully loaded. After that, we do an alert on the page with the text `Hello world`. You may be wondering, why do we want to wait for the document to be ready, if I can simply do an alert any minute. And you would be right with this example. However, let's imagine we want to modify the text in our button like we did on the [previous section](#dom-manipulation). If the DOM hasn't finished loading, we would not be able to find the element to modify. So in this case, it'd be best to wait for it to be ready before trying to modify it
 
 ```javascript
   $(document).ready(function() {
@@ -708,7 +708,7 @@ For a full list of jQuery functions, you can check the [jQuery API](https://api.
 
 So far, we've been able to modify things in our DOM using javascirpt. However we have been doing it on the fly when the document loads. The really cool thing about javascript is that it lets us do things when we interact with out website.
 
-To do this, javascript has something called an event system. This allows us to tell our program to wait for an action to happen and trigger something as a reaction it. We have already used one of these events (we used `ready()` in the [previous section](#jquery)). However, there is a wide variety of events javascript can listten to. Some of the most used are:
+To do this, javascript has something called an event system. This allows us to tell our program to wait for an action to happen and trigger something as a reaction it. We have already used one of these events (we used `ready()` in the [previous section](#jquery)). However, there is a wide variety of events javascript can listen to. Some of the most used are:
 
 - click: A pointing device button has been pressed and released on an element.
 - mouseover: A pointing device is moved onto the element that has the listener attached or onto one of its children.
@@ -718,12 +718,12 @@ To do this, javascript has something called an event system. This allows us to t
 
 For a full list of events, please refer to the [MDN Reference file](https://developer.mozilla.org/en-US/docs/Web/Events)
 
-Let's see an example using a click event. In our example we will trigger an alert after clicking on a button. The first thing to do is select the element to be clicked. This way we can add the event listtener to it for the alert to be triggered on click.
+Let's see an example using a click event. In our example we will trigger an alert after clicking on a button. The first thing to do is select the element to be clicked. This way we can add the event listener to it for the alert to be triggered on click.
 
 ```javascript
   $('#myButton');
 ```
-The next thing is to add the listtener to our element. We do this by chaining the `.on()` function. This function takes several parameters. In this example we will use only two. The first parameter is the event we want to listten to, followed by the callback function to be executed when this event is triggered.
+The next thing is to add the listener to our element. We do this by chaining the `.on()` function. This function takes several parameters. In this example we will use only two. The first parameter is the event we want to listen to, followed by the callback function to be executed when this event is triggered.
 
 ```javascript
   $('#myButton').on('click', function(){});
